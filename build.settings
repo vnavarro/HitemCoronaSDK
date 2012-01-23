@@ -1,0 +1,21 @@
+settings=
+{
+	iphone =
+	{
+		plist=
+		{		
+			UIAppFonts =
+			{
+				"NEUROPOL.ttf"
+			}
+		},
+	},
+	orientation=
+	{
+		default = "portrait",
+		supported =
+		{
+			"portrait"
+		}
+	}
+}
