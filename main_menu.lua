@@ -26,6 +26,8 @@ local controls = require "controls"
 
 function new()
 	local mainmenu = display.newGroup()
+	mainmenu.startSound = audio.loadSound("startbtn.wav")
+	
 	
 	mainmenu.show = function (self) 
 		self.background = display.newRect(self, 0, 0, display.contentWidth, display.contentHeight )
@@ -39,8 +41,12 @@ function new()
 		self.title:setTextColor(16,78,139)--72,55,55
 	end
 	
-	mainmenu.onBtnStartTouched = function(self,listener)
-		self.btnStart.onTouch = listener
+	mainmenu.onBtnStartTouched = function(self,listener)			
+		audio.setVolume(1,1)
+		audio.play(startSound,
+		{channel=1,loops=0,onComplete=function()
+			self.btnStart.onTouch = listener
+		end})
 	end
 	
 	mainmenu.unload = function(self)

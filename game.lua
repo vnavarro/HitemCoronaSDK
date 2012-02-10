@@ -192,7 +192,7 @@ function new()
 					local size = game.bar.width/2
 					if event.x > game.bar.contentBounds.xMin then size= size *-1 end
 										print("size",size)
-					transition.to(game.bar, {time = 500, x = event.x + size })
+					transition.to(game.bar, {time = 200, x = event.x + size })
 				end
 			end
 		end
